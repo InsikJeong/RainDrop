@@ -4,12 +4,12 @@ from sys import exit
 import gameEx
 import note
 
-logo = pygame.image.load('title_logo6.png')
+logo = pygame.image.load('image/title_logo6.png')
 titleLogo = pygame.transform.scale(logo, (500, 250))
 
-backgroundFileName='back.jpg'
+backgroundFileName='image/back.jpg'
 menuFontFileName = 'ReenieBeanie-Regular.ttf'
-comImg='combo.png'
+comImg='image/combo.png'
 
 music1 = ''
 
@@ -22,7 +22,7 @@ sounds.init()
 # 채널 세팅 /채널0 = 배경음악 /채널1 = 메뉴 효과음/채널2 = 메뉴노래 
 sounds.set_num_channels(10) 
 # bgm 재생 채널0
-sounds.Channel(0).play(sounds.Sound('bgm.wav'))
+sounds.Channel(0).play(sounds.Sound('bgm/bgm.wav'))
 
 pygame.init()
 
@@ -83,7 +83,7 @@ def message_to_screen(msg,color,x_displace,y_displace=0,size="small"):
 
 #------ 결과 창 ---------
 def end_game():
-    sounds.Channel(3).play(sounds.Sound('end_game.wav'))
+    sounds.Channel(3).play(sounds.Sound('bgm/end_game.wav'))
     
     screen.blit(backgroundImage,(0,0))
 
@@ -99,7 +99,7 @@ def end_game():
                 pygame.quit()
                 quit()
             if event.type == pygame.KEYDOWN:
-                sounds.Channel(1).play(sounds.Sound('UpDown.wav'))
+                sounds.Channel(1).play(sounds.Sound('bgm/UpDown.wav'))
                 if event.key == pygame.K_ESCAPE:
                     game_title()
                     
@@ -185,7 +185,7 @@ def choice_music():
             timePassed = clock.tick()
             
             if event.type == KEYDOWN: 
-                sounds.Channel(1).play(sounds.Sound('UpDown.wav'))
+                sounds.Channel(1).play(sounds.Sound('bgm/UpDown.wav'))
                 if event.key == K_DOWN:
                     if enterCheck < len(musicList)-1 :
                         enterCheck += 1
@@ -212,7 +212,7 @@ def choice_music():
                     pygame.display.update()
                 elif event.key == pygame.K_ESCAPE: #esc 누를떄
                         sounds.Channel(2).stop()
-                        sounds.Channel(0).play(sounds.Sound('bgm.wav'))
+                        sounds.Channel(0).play(sounds.Sound('bgm/bgm.wav'))
                         game_title()
 
                 if event.key == pygame.K_RETURN: #엔터 쳤을때 
@@ -226,11 +226,11 @@ def choice_music():
                         runCheck = gameEx.play_game(musicList[enterCheck])
                         if runCheck == 1:
                             print('esc 종료')
-                            sounds.Channel(0).play(sounds.Sound('bgm.wav'))
+                            sounds.Channel(0).play(sounds.Sound('bgm/bgm.wav'))
                             game_title()
                         if runCheck == 2:
                             print('겜 끝나서 종료')
-                            sounds.Channel(0).play(sounds.Sound('bgm.wav'))
+                            sounds.Channel(0).play(sounds.Sound('bgm/bgm.wav'))
                             end_game()
 
 
@@ -247,7 +247,7 @@ def game_controls():
                 pygame.quit()
                 quit()
             if event.type == pygame.KEYDOWN:
-                sounds.Channel(1).play(sounds.Sound('UpDown.wav'))
+                sounds.Channel(1).play(sounds.Sound('bgm/UpDown.wav'))
                 if event.key == pygame.K_ESCAPE:
                     game_title()
                     
@@ -298,7 +298,7 @@ def game_title():
             timePassed = clock.tick()
             
             if event.type == KEYDOWN: 
-                sounds.Channel(1).play(sounds.Sound('UpDown.wav'))
+                sounds.Channel(1).play(sounds.Sound('bgm/UpDown.wav'))
                 if event.key == K_DOWN: #방향키 밑으로
                     if enterCheck < 2 :
                         enterCheck += 1

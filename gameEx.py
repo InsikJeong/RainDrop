@@ -35,23 +35,23 @@ def play_game(musicName):
     pygame.display.set_caption('Piano Game')
 
     #이미지 로드
-    noteImage = pygame.image.load('note.png')
+    noteImage = pygame.image.load('image/note.png')
     noteImage = pygame.transform.scale(noteImage, (60, 20))
-    noteImage2 = pygame.image.load('note2.png')
+    noteImage2 = pygame.image.load('image/note2.png')
     noteImage2 = pygame.transform.scale(noteImage2, (60, 20))
-    note_effect = pygame.image.load('note-effect.png').convert_alpha()
+    note_effect = pygame.image.load('image/note-effect.png').convert_alpha()
     note_effect.set_alpha(125)
     note_effect = pygame.transform.scale(note_effect, (60,250))
-    background = pygame.image.load('back.png')
-    comboImage = pygame.image.load('combo.png')
+    background = pygame.image.load('image/back.png')
+    comboImage = pygame.image.load('image/combo.png')
     comboImage = pygame.transform.scale(comboImage, (200, 200))
-    buttonImage = pygame.image.load('btn.png')
+    buttonImage = pygame.image.load('image/btn.png')
     buttonImage = pygame.transform.scale(buttonImage, (60, 20))
-    clickedImage = pygame.image.load('btnPress.png')
+    clickedImage = pygame.image.load('image/btnPress.png')
     clickedImage = pygame.transform.scale(clickedImage, (60, 20))
-    buttonImage2 = pygame.image.load('btn2.png')
+    buttonImage2 = pygame.image.load('image/btn2.png')
     buttonImage2 = pygame.transform.scale(buttonImage2, (60, 20))
-    clickedImage2 = pygame.image.load('btnPress2.png')
+    clickedImage2 = pygame.image.load('image/btnPress2.png')
     clickedImage2 = pygame.transform.scale(clickedImage2, (60, 20))
 
     allNoteList = pygame.sprite.Group()
@@ -126,7 +126,7 @@ def play_game(musicName):
                 if keys[pygame.K_a]:
                     effect_opacity[0] = 255
                     if(keys_status[0] == 0):
-                        sounds.Sound("hihat.wav").play()
+                        sounds.Sound("bgm/hihat.wav").play()
                         checkNote(runtime, 0)
                     keys_status[0] = 1
                 else:
@@ -134,7 +134,7 @@ def play_game(musicName):
                 if keys[pygame.K_s]:
                     effect_opacity[1] = 255
                     if(keys_status[1] == 0):
-                        sounds.Sound("hihat.wav").play()
+                        sounds.Sound("bgm/hihat.wav").play()
                         checkNote(runtime, 1)
                     keys_status[1] = 1
                 else:
@@ -142,7 +142,7 @@ def play_game(musicName):
                 if keys[pygame.K_d]:
                     effect_opacity[2] = 255
                     if(keys_status[2] == 0):
-                        sounds.Sound("hihat.wav").play()
+                        sounds.Sound("bgm/hihat.wav").play()
                         checkNote(runtime, 2)
                     keys_status[2] = 1
                 else:
@@ -150,7 +150,7 @@ def play_game(musicName):
                 if keys[pygame.K_j]:
                     effect_opacity[3] = 255
                     if(keys_status[3] == 0):
-                        sounds.Sound("hihat.wav").play()
+                        sounds.Sound("bgm/hihat.wav").play()
                         checkNote(runtime, 3)
                     keys_status[3] = 1
                 else:
@@ -158,7 +158,7 @@ def play_game(musicName):
                 if keys[pygame.K_k]:
                     effect_opacity[4] = 255
                     if(keys_status[4] == 0):
-                        sounds.Sound("hihat.wav").play()
+                        sounds.Sound("bgm/hihat.wav").play()
                         checkNote(runtime, 4)
                     keys_status[4] = 1
                 else:
@@ -166,7 +166,7 @@ def play_game(musicName):
                 if keys[pygame.K_l]:
                     effect_opacity[5] = 255
                     if(keys_status[5] == 0):
-                        sounds.Sound("hihat.wav").play()
+                        sounds.Sound("bgm/hihat.wav").play()
                         checkNote(runtime, 5)
                     keys_status[5] = 1
                 else:
